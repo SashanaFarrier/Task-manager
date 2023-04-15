@@ -1,0 +1,298 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Roboto, sans-serif, system-ui;
+  position: relative;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+section {
+  height: 100%;
+  background: hsla(212, 100%, 14%, 1);
+
+  background: radial-gradient(
+    circle,
+    hsla(212, 100%, 14%, 1) 0%,
+    hsla(271, 68%, 32%, 1) 100%
+  );
+
+  background: -moz-radial-gradient(
+    circle,
+    hsla(212, 100%, 14%, 1) 0%,
+    hsla(271, 68%, 32%, 1) 100%
+  );
+
+  background: -webkit-radial-gradient(
+    circle,
+    hsla(212, 100%, 14%, 1) 0%,
+    hsla(271, 68%, 32%, 1) 100%
+  );
+
+  overflow: hidden !important;
+}
+
+.container {
+  width: 85%;
+  margin: 0 auto;
+}
+
+.flex-container {
+  display: flex;
+  align-items: center;
+}
+
+section .flex-container {
+  flex-direction: column;
+}
+
+a,
+button {
+  cursor: pointer;
+}
+
+button {
+  border: none;
+  outline: none;
+  background: none;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.img > img {
+  width: 800px;
+  margin-top: 3em;
+}
+
+header {
+  width: 100%;
+  height: 10vh;
+  padding-block: 3em;
+  background-color: rgb(28, 24, 64);
+  position: relative;
+}
+
+header .flex-container {
+  justify-content: space-between;
+}
+
+header,
+header .left-col {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.logo > img {
+  width: 30px;
+  height: 30px;
+}
+
+header h1 {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  color: white;
+  margin-left: 0.25em;
+  position: relative;
+}
+
+header h1::after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  right: -6px;
+  background-color: rgb(254, 210, 74);
+  width: 5px;
+  height: 5px;
+  border-radius: 50px;
+}
+
+.main-text {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.big-text p {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 2em;
+}
+
+input {
+  outline: none;
+  border: none;
+  background-color: transparent;
+}
+
+.add-task-btn {
+  padding: 1em;
+  background-color: #ff9f00;
+  border-radius: 10px;
+  margin-top: 1em;
+  width: 100%;
+}
+
+.task h3 {
+  text-transform: uppercase;
+  color: #fff;
+  padding: 1em;
+  background-color: #000;
+  border-radius: 10px;
+}
+
+.get-started-btn,
+.go-back-btn {
+  font-size: 1rem;
+  color: #fff;
+  text-align: center;
+  padding: 0.5em 1em;
+  background-color: #ff9f00;
+  border-radius: 99vw;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1em;
+  background-color: #ff9f00;
+  border-radius: 10px;
+  margin-top: 1em;
+}
+
+.btns {
+  display: flex;
+  gap: 0.5em;
+}
+
+.save-btn {
+  font-size: 1rem;
+  text-transform: uppercase;
+  color: #fff;
+  padding: 1em;
+  background-color: #000;
+  border-radius: 10px;
+  margin-top: 3em;
+  width: 100%;
+}
+
+.dropdown-menu {
+  position: absolute;
+  width: 100%;
+  min-height: 100vh;
+  background: #36454f;
+  transition: transform 1500ms ease-out;
+}
+
+.grid {
+  display: grid;
+  place-content: center;
+  margin-top: 2em;
+}
+
+.column {
+  text-align: center;
+  background-color: #dfdfdf;
+  min-height: 200px;
+  border-radius: 15px;
+  padding: 1em;
+  margin-bottom: 1em;
+  box-shadow: 0px 0px 15px rgb(18, 19, 19);
+}
+
+.column-1 ul {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 0.5em;
+}
+
+.column-1 ul li {
+  font-size: 0.75rem;
+  color: white;
+  margin-top: 1em;
+  margin-right: 1em;
+  padding: 0.75em;
+  background-color: rgb(9, 61, 91);
+  cursor: pointer;
+  box-shadow: 5px 5px 5px 0px rgb(18, 19, 19);
+}
+
+.column-1 ul li:hover {
+  background-color: #6699cc;
+}
+
+.hidden {
+  display: none;
+}
+
+.translateX {
+  transform: translateX(100%);
+}
+
+.disabled {
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+@media screen and (min-width: 33.125em) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-flow: row;
+    gap: 2em;
+  }
+
+  .column {
+    grid-column: 1 / 3;
+  }
+}
+
+@media screen and (min-width: 37.5em) {
+  .column {
+    grid-column: revert;
+  }
+
+  .column-1 {
+    grid-row: 1 / 3;
+  }
+
+  section .flex-container {
+    flex-direction: row;
+  }
+
+  .big-text p {
+    font-size: 3rem;
+  }
+}
+
+@media screen and (min-width: 50em) {
+  .grid {
+    margin-top: 2em;
+  }
+}
+
+@media screen and (min-width: 60.625em) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

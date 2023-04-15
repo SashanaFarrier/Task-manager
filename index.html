@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Manager App</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="flex-container">
+          <div class="left-col">
+            <div class="logo">
+              <img src="images/logo.png" alt="Company logo" />
+            </div>
+            <h1>Task App</h1>
+          </div>
+          <div class="btn-container">
+            <button class="get-started-btn">Get Started</button>
+            <button class="go-back-btn hidden">Go Back</button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="dropdown-menu translateX">
+      <div class="container">
+        <div class="grid">
+          <div class="column column-1">
+            <div class="box box-1">
+              <input class="add-task-btn" type="text" placeholder="Add Task" />
+              <ul class="tags">
+                <li class="important">Important</li>
+                <li class="due">Due Soon</li>
+              </ul>
+              <button class="save-btn">Save</button>
+            </div>
+          </div>
+          <div class="column column-2 task">
+            <div class="box box-2 task-list-general">
+              <h3>General Tasks</h3>
+              <div class="task-list-div"></div>
+            </div>
+          </div>
+          <div class="column column-3 task">
+            <div class="box box-3 task-list-important">
+              <h3>Important Tasks</h3>
+              <div class="task-list-div"></div>
+            </div>
+          </div>
+          <div class="column column-4 task">
+            <div class="box box-4 task-list-due">
+              <h3>Due Soon</h3>
+              <div class="task-list-div"></div>
+            </div>
+          </div>
+          <div class="column column-5 task">
+            <div class="box box-5 task-list-completed">
+              <h3 class="completed">Completed</h3>
+              <div class="task-list-div"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <section>
+      <div class="container">
+        <div class="main-text flex-container">
+          <div class="big-text">
+            <p>Don't miss out on a single assignment.</p>
+          </div>
+
+          <div class="img">
+            <img src="images/task-App.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="main.js"></script>
+  </body>
+</html>
