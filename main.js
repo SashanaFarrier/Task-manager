@@ -4,6 +4,7 @@ const dropdownMenu = document.querySelector(".dropdown-menu");
 
 getStartedBtn.addEventListener("click", function () {
   dropdownMenu.classList.toggle("translateX");
+  dropdownMenu.style.height = "100%";
   getStartedBtn.classList.add("hidden");
   goBackBtn.classList.remove("hidden");
 });
@@ -18,18 +19,6 @@ const addTaskBtn = document.querySelector(".add-task-btn");
 
 const saveBtn = document.querySelector(".save-btn");
 const tasksContainer = document.querySelectorAll(".task");
-
-// const taskListDiv = document.querySelector(".task-list-div");
-
-// const completedList = document.querySelector(".completed");
-
-// const taskListGeneral = document.querySelector(".task-list-general");
-
-// const taskListCompleted = document.querySelector(".task-list-completed");
-
-// const taskListImportant = document.querySelector(".task-list-important");
-
-// const taskListDue = document.querySelector(".task-list-due");
 
 const importantFlag = document.querySelector(".important");
 
@@ -221,23 +210,11 @@ function addTask() {
           JSON.stringify(generalTaskContainer)
         );
       }
-
-      // const editBtn = document.querySelector(".edit-btn");
-
-      // const checkBtn = document.querySelector(".check-btn");
-
-      // const tasksContainer = document.querySelectorAll(".task");
-      // console.log(tasksContainer);
-
-      // deleteBtn.addEventListener("click", (e) => {
-      //   e.target.closest(".task-list-div").remove();
-      // });
     }
 
     addTaskBtn.value = "";
     isImportant = false;
     isDueSoon = false;
-    // console.log(generalTaskContainer);
   });
 }
 
@@ -258,8 +235,6 @@ function HTML(item) {
       <button class="delete-btn">&#10005;</button>`;
   content.append(taskInputBtn, btnsDiv);
   taskListDiv.append(content);
-
-  // console.log(taskItemsContainer);
 }
 
 function flaggedAsImportant() {
@@ -268,8 +243,6 @@ function flaggedAsImportant() {
     importantFlag.style.backgroundColor = "green";
     dueSoonFlag.classList.add("disabled");
   });
-
-  // isImportant = false;
 }
 
 function flaggedAsDueSoon() {
@@ -390,9 +363,7 @@ function completed() {
             taskCompletedContainer.querySelector(".task-list-div");
           taskListDiv.append(htmlEl);
           const checkBtn = taskCompletedContainer.querySelector(".check-btn");
-          // const editBtn = taskCompletedContainer.querySelector(".edit-btn");
           checkBtn.classList.add("hidden");
-          // editBtn.classList.add("hidden");
 
           const updatedGeneralTaskContainer = generalTaskContainer.filter(
             (item) => item.id !== id
