@@ -14,7 +14,7 @@ body {
 }
 
 section {
-  height: calc(90vh - 3em);
+  height: calc(90vh - 34px);
   background: hsla(212, 100%, 14%, 1);
 
   background: radial-gradient(
