@@ -14,7 +14,7 @@ body {
 }
 
 section {
-  height: 100%;
+  height: calc(90vh - 3em);
   background: hsla(212, 100%, 14%, 1);
 
   background: radial-gradient(
@@ -200,7 +200,7 @@ input {
 .dropdown-menu {
   position: absolute;
   width: 100%;
-  min-height: 100vh;
+  height: 0px;
   background: #36454f;
   transition: transform 1500ms ease-out;
 }
