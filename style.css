@@ -9,8 +9,8 @@
 body {
   font-family: Roboto, sans-serif, system-ui;
   position: relative;
-  height: 100vh;
-  overflow-x: hidden;
+  min-height: 100vh;
+  overflow-x: hidden ! important;
 }
 
 section {
