@@ -10,7 +10,7 @@ body {
   font-family: Roboto, sans-serif, system-ui;
   position: relative;
   min-height: 100vh;
-  overflow-x: hidden ! important;
+  overflow-x: hidden !important;
 }
 
 section {
