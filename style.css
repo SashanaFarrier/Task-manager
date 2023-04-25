@@ -203,6 +203,7 @@ input {
   height: 0px;
   background: #36454f;
   transition: transform 1500ms ease-out;
+  overflow-y: scroll;
 }
 
 .grid {
