@@ -1,18 +1,23 @@
 const getStartedBtn = document.querySelector(".get-started-btn");
 const goBackBtn = document.querySelector(".go-back-btn ");
 const dropdownMenu = document.querySelector(".dropdown-menu");
+const hero = document.querySelector(".hero");
 
 getStartedBtn.addEventListener("click", function () {
+  dropdownMenu.classList.remove("hidden");
   dropdownMenu.classList.toggle("translateX");
   dropdownMenu.style.height = "100%";
   getStartedBtn.classList.add("hidden");
   goBackBtn.classList.remove("hidden");
+  hero.classList.add("hidden");
 });
 
 goBackBtn.addEventListener("click", function () {
   dropdownMenu.classList.toggle("translateX");
+  dropdownMenu.style.height = "0px";
   getStartedBtn.classList.remove("hidden");
   goBackBtn.classList.add("hidden");
+  hero.classList.remove("hidden");
 });
 
 const addTaskBtn = document.querySelector(".add-task-btn");
@@ -185,7 +190,7 @@ function addTask() {
         const task = htmlEl.querySelector("input").value;
 
         const id = htmlEl.getAttribute("id");
-        // console.log(id);
+
         importantTaskContainer.push({ task, id });
 
         localStorage.setItem(
@@ -235,21 +240,36 @@ function HTML(item) {
       <button class="delete-btn">&#10005;</button>`;
   content.append(taskInputBtn, btnsDiv);
   taskListDiv.append(content);
+
+  // console.log(taskItemsContainer);
 }
 
 function flaggedAsImportant() {
   importantFlag.addEventListener("click", () => {
-    isImportant = true;
-    importantFlag.style.backgroundColor = "green";
-    dueSoonFlag.classList.add("disabled");
+    isImportant = !isImportant;
+
+    if (isImportant) {
+      importantFlag.style.backgroundColor = "green";
+      dueSoonFlag.classList.add("disabled");
+    } else {
+      importantFlag.style.backgroundColor = "rgb(9, 61, 91)";
+      dueSoonFlag.classList.remove("disabled");
+    }
   });
+
+  // isImportant = false;
 }
 
 function flaggedAsDueSoon() {
   dueSoonFlag.addEventListener("click", () => {
-    isDueSoon = true;
-    dueSoonFlag.style.backgroundColor = "green";
-    importantFlag.classList.add("disabled");
+    isDueSoon = !isDueSoon;
+    if (isDueSoon) {
+      dueSoonFlag.style.backgroundColor = "green";
+      importantFlag.classList.add("disabled");
+    } else {
+      dueSoonFlag.style.backgroundColor = "rgb(9, 61, 91)";
+      importantFlag.classList.remove("disabled");
+    }
   });
 }
 
@@ -265,7 +285,6 @@ function deleteItem() {
             .parentElement.classList.contains("task-list-general")
         ) {
           const id = deleteBtn.closest(".content").getAttribute("id");
-          console.log(id);
           deleteBtn.closest(".content").remove();
           const updatedGeneralTaskContainer = generalTaskContainer.filter(
             (item) => item.id !== id
@@ -363,7 +382,9 @@ function completed() {
             taskCompletedContainer.querySelector(".task-list-div");
           taskListDiv.append(htmlEl);
           const checkBtn = taskCompletedContainer.querySelector(".check-btn");
+          // const editBtn = taskCompletedContainer.querySelector(".edit-btn");
           checkBtn.classList.add("hidden");
+          // editBtn.classList.add("hidden");
 
           const updatedGeneralTaskContainer = generalTaskContainer.filter(
             (item) => item.id !== id
